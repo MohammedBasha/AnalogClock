@@ -6,14 +6,16 @@ const HOURHAND = document.querySelector("#hour"),
 // Creates a JavaScript Date Object instance 
 var date = new Date();
 
-// Defining Variables for the Clock Hands Positions
-let hrPosition = 20,
-    minPosition = 130,
-    secPosition = 267,
+let 
     // Defining Variables for the Time
     hr = date.getHours(),
     min = date.getMinutes(),
-    sec = date.getSeconds();
+    sec = date.getSeconds(),
+    
+    // Defining Variables for the Clock Hands Positions
+    hrPosition = (hr * 360 / 12) + (min * (360 / 60) / 12),
+    minPosition = (min * 360 / 60) + (sec * (360 / 60) / 60),
+    secPosition = sec * 360 / 60;
 
 // Set the Clock Hands Transform Styles
 HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
